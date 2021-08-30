@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results ignored="0" total="3" passed="3" failed="0" skipped="0">
+  <reporter-output>
+  </reporter-output>
+  <suite started-at="2021-08-30T16:11:34 CEST" name="Default suite" finished-at="2021-08-30T16:11:41 CEST" duration-ms="6933">
+    <groups>
+      <group name="cucumber">
+        <method signature="AbstractTestNGCucumberTests.feature(cucumber.api.testng.CucumberFeatureWrapper)[pri:0, instance:tests.UserRegistrationTestWithJavaFaker@7d0d91a1]" name="feature" class="cucumber.api.testng.AbstractTestNGCucumberTests"/>
+      </group> <!-- cucumber -->
+    </groups>
+    <test started-at="2021-08-30T16:11:34 CEST" name="Default test" finished-at="2021-08-30T16:11:41 CEST" duration-ms="6933">
+      <class name="tests.UserRegistrationTestWithJavaFaker">
+        <test-method is-config="true" signature="startDriver(java.lang.String)[pri:0, instance:tests.UserRegistrationTestWithJavaFaker@7d0d91a1]" started-at="2021-08-30T16:11:30 CEST" name="startDriver" finished-at="2021-08-30T16:11:34 CEST" duration-ms="3775" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[chrome]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- startDriver -->
+        <test-method is-config="true" signature="setUpClass()[pri:0, instance:tests.UserRegistrationTestWithJavaFaker@7d0d91a1]" started-at="2021-08-30T16:11:34 CEST" name="setUpClass" finished-at="2021-08-30T16:11:34 CEST" duration-ms="194" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUpClass -->
+        <test-method signature="UserCanRegisterSuccssfully()[pri:1, instance:tests.UserRegistrationTestWithJavaFaker@7d0d91a1]" started-at="2021-08-30T16:11:34 CEST" name="UserCanRegisterSuccssfully" finished-at="2021-08-30T16:11:37 CEST" duration-ms="3188" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- UserCanRegisterSuccssfully -->
+        <test-method is-config="true" signature="screenshotOnFailure(org.testng.ITestResult)[pri:0, instance:tests.UserRegistrationTestWithJavaFaker@7d0d91a1]" started-at="2021-08-30T16:11:37 CEST" name="screenshotOnFailure" finished-at="2021-08-30T16:11:37 CEST" duration-ms="1" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=UserCanRegisterSuccssfully status=SUCCESS method=UserRegistrationTestWithJavaFaker.UserCanRegisterSuccssfully()[pri:1, instance:tests.UserRegistrationTestWithJavaFaker@7d0d91a1] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- screenshotOnFailure -->
+        <test-method signature="RegisteredUserCanLogout()[pri:0, instance:tests.UserRegistrationTestWithJavaFaker@7d0d91a1]" started-at="2021-08-30T16:11:37 CEST" name="RegisteredUserCanLogout" finished-at="2021-08-30T16:11:39 CEST" depends-on-methods="tests.UserRegistrationTestWithJavaFaker.UserCanRegisterSuccssfully" duration-ms="2137" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- RegisteredUserCanLogout -->
+        <test-method is-config="true" signature="screenshotOnFailure(org.testng.ITestResult)[pri:0, instance:tests.UserRegistrationTestWithJavaFaker@7d0d91a1]" started-at="2021-08-30T16:11:39 CEST" name="screenshotOnFailure" finished-at="2021-08-30T16:11:39 CEST" duration-ms="0" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=RegisteredUserCanLogout status=SUCCESS method=UserRegistrationTestWithJavaFaker.RegisteredUserCanLogout()[pri:0, instance:tests.UserRegistrationTestWithJavaFaker@7d0d91a1] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- screenshotOnFailure -->
+        <test-method signature="RegisteredUserCanLogin()[pri:0, instance:tests.UserRegistrationTestWithJavaFaker@7d0d91a1]" started-at="2021-08-30T16:11:39 CEST" name="RegisteredUserCanLogin" finished-at="2021-08-30T16:11:41 CEST" depends-on-methods="tests.UserRegistrationTestWithJavaFaker.RegisteredUserCanLogout" duration-ms="1361" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- RegisteredUserCanLogin -->
+        <test-method is-config="true" signature="screenshotOnFailure(org.testng.ITestResult)[pri:0, instance:tests.UserRegistrationTestWithJavaFaker@7d0d91a1]" started-at="2021-08-30T16:11:41 CEST" name="screenshotOnFailure" finished-at="2021-08-30T16:11:41 CEST" duration-ms="0" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=RegisteredUserCanLogin status=SUCCESS method=UserRegistrationTestWithJavaFaker.RegisteredUserCanLogin()[pri:0, instance:tests.UserRegistrationTestWithJavaFaker@7d0d91a1] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- screenshotOnFailure -->
+        <test-method is-config="true" signature="tearDownClass()[pri:0, instance:tests.UserRegistrationTestWithJavaFaker@7d0d91a1]" started-at="2021-08-30T16:11:41 CEST" name="tearDownClass" finished-at="2021-08-30T16:11:41 CEST" duration-ms="12" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDownClass -->
+        <test-method is-config="true" signature="stopDriver()[pri:0, instance:tests.UserRegistrationTestWithJavaFaker@7d0d91a1]" started-at="2021-08-30T16:11:41 CEST" name="stopDriver" finished-at="2021-08-30T16:11:41 CEST" duration-ms="131" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- stopDriver -->
+      </class> <!-- tests.UserRegistrationTestWithJavaFaker -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
+</testng-results>
