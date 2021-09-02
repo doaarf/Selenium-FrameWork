@@ -42,7 +42,11 @@
 	</build>
 
 	<dependencies>
-
+		<dependency>
+			<groupId>com.codeborne</groupId>
+			<artifactId>phantomjsdriver</artifactId>
+			<version>1.4.4</version>
+		</dependency>
 		<dependency>
 			<groupId>info.cukes</groupId>
 			<artifactId>cucumber-core</artifactId>
@@ -64,7 +68,6 @@
 			<artifactId>cucumber-java</artifactId>
 			<version>1.2.6</version>
 		</dependency>
-
 		<dependency>
 			<groupId>org.testng</groupId>
 			<artifactId>testng</artifactId>
@@ -76,7 +79,6 @@
 			<artifactId>selenium-java</artifactId>
 			<version>4.0.0-beta-4</version>
 		</dependency>
-
 		<dependency>
 			<groupId>org.apache.poi</groupId>
 			<artifactId>poi-ooxml</artifactId>
