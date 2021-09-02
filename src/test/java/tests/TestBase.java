@@ -2,6 +2,7 @@ package tests;
 
 import java.time.Duration;
 import java.util.HashMap;
+import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -24,18 +25,18 @@ import utilities.Helper;
 public class TestBase extends AbstractTestNGCucumberTests
 {
 	public static WebDriver driver ; 
-	
+
 	public static String downloadPath = System.getProperty("user.dir") + "\\Downloads";
 
-	public static FirefoxOptions firefoxOption() {
-		FirefoxOptions option = new FirefoxOptions();
-		option.addPreference("browser.download.folderList", 2);
-		option.addPreference("browser.download.dir", downloadPath);
-		option.addPreference("browser.helperApps.neverAsk.saveToDisk", "application/pdf");
-		option.addPreference("browser.download.manager.showWhenStarting", false);
-		option.addPreference("pdfjs.disabled", true);
-		return option;
-	}
+	/*
+	 * public static FirefoxOptions firefoxOption() { FirefoxOptions option = new
+	 * FirefoxOptions(); option.addPreference("browser.download.folderList", 2);
+	 * option.addPreference("browser.download.dir", downloadPath);
+	 * option.addPreference("browser.helperApps.neverAsk.saveToDisk",
+	 * "application/pdf");
+	 * option.addPreference("browser.download.manager.showWhenStarting", false);
+	 * option.addPreference("pdfjs.disabled", true); return option; }
+	 */
 
 	public static ChromeOptions chromeOption() {
 		ChromeOptions options = new ChromeOptions();
@@ -43,7 +44,7 @@ public class TestBase extends AbstractTestNGCucumberTests
 		chromePrefs.put("profile.default.content_settings.popups", 0);
 		chromePrefs.put("download.default_directory", downloadPath);
 		options.setExperimentalOption("prefs", chromePrefs);
-		options.setCapability(CapabilityType.ACCEPT_SSL_CERTS, true);
+		//options.setCapability(CapabilityType.ACCEPT_SSL_CERTS, true);
 		return options;
 	}
 
@@ -56,25 +57,48 @@ public class TestBase extends AbstractTestNGCucumberTests
 			driver = new ChromeDriver(chromeOption()); 
 		}
 
-		else if(browserName.equalsIgnoreCase("firefox")) {
-			System.setProperty("webdriver.gecko.driver", System.getProperty("user.dir")+"/drivers/geckodriver.exe");
-			driver = new FirefoxDriver(firefoxOption()); 
-		}
+		/*
+		 * else if(browserName.equalsIgnoreCase("firefox")) {
+		 * System.setProperty("webdriver.gecko.driver",
+		 * System.getProperty("user.dir")+"/drivers/geckodriver.exe"); driver = new
+		 * FirefoxDriver(firefoxOption()); }
+		 */
 
 		else if (browserName.equalsIgnoreCase("ie")) 
 		{
 			System.setProperty("webdriver.ie.driver", System.getProperty("user.dir")+"/drivers/IEDriverServer.exe");
 			driver = new InternetExplorerDriver(); 
 		}
+		
+		
+		else if (browserName.equalsIgnoreCase("chrome-headless"))
+		{
+			System.setProperty("webdriver.chrome.driver", 
+			System.getProperty("user.dir")+"/drivers/chromedriver.exe");
+			ChromeOptions options = new ChromeOptions();
+			options.addArguments("--headless");
+			options.addArguments("--window-size=1920,1080");
+			driver = new ChromeDriver(options);
+			
+		}
+		
 
 		else if (browserName.equalsIgnoreCase("safari")) {
 			driver = new SafariDriver(); 
 		}
+		
+		
+		
+		
 		driver.manage().window().maximize();
 		//driver.manage().timeouts().implicitlyWait(120, TimeUnit.SECONDS);
-		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(120));
+		driver.manage().timeouts().implicitlyWait(120, TimeUnit.SECONDS);
+
 		driver.navigate().to("http://demo.nopcommerce.com/");
+	
+	
 	} 
+
 
 	@AfterSuite
 	public void stopDriver() 
